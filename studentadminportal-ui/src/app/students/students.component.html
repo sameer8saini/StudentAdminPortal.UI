@@ -1,0 +1,67 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Students</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row end-xs mt-1">
+    <div class="col-xs-12">
+      <input type="text" class="searh-input" placeholder="Search students" [(ngModel)]="filterString"
+        (keyup)="filterStudents()">
+    </div>
+  </div>
+
+
+  <div class="mt-1 mat-elevation-z8">
+    <table mat-table matSort [dataSource]="dataSource" class="">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- First Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+
+      <!-- Date Of Birth Column -->
+      <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef> Date Of Birth </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateOfBirth | date:'dd-MM-yyyy'}} </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- Mobile Column -->
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Mobile </th>
+        <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+      </ng-container>
+
+      <!-- Gender Column -->
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let element"> {{element.gender.description}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" z->
+    </mat-paginator>
+  </div>
+</div>
