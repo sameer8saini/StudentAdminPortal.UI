@@ -51,13 +51,15 @@ import { MatTableModule } from '@angular/material/table';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ViewStudentComponent } from './students/view-student/view-student.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    StudentsComponent
+    StudentsComponent,
+    ViewStudentComponent
   ],
   imports: [
     FormsModule,
