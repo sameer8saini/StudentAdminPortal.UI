@@ -19,9 +19,9 @@ body {
 }
 
 .ml-1 {
-  margin-left: 1em;
+  margin-left: 1em !important;
 }
 
 .mt-1 {
-  margin-top: 1em;
+  margin-top: 1em !important;
 }
