@@ -22,13 +22,15 @@
           <div class="col-xs-6">
             <mat-form-field appearance="outline">
               <mat-label>First Name</mat-label>
-              <input type="text" matInput [(ngModel)]="student.firstName" name="firstName">
+              <input type="text" matInput [(ngModel)]="student.firstName" name="firstName" required>
+              <mat-error>First Name is a required field</mat-error>
             </mat-form-field>
           </div>
           <div class="col-xs-6">
             <mat-form-field appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input type="text" matInput [(ngModel)]="student.lastName" name="lastName">
+              <input type="text" matInput [(ngModel)]="student.lastName" name="lastName" required>
+              <mat-error>Last Name is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -36,9 +38,10 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Date Of Birth</mat-label>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="student.dateOfBirth" name="dateOfBirth">
+              <input matInput [matDatepicker]="picker" [(ngModel)]="student.dateOfBirth" name="dateOfBirth" required>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
+              <mat-error>Date Of Birth is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -46,13 +49,15 @@
           <div class="col-xs-6">
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
-              <input type="text" matInput [(ngModel)]="student.email" name="email">
+              <input type="text" matInput [(ngModel)]="student.email" name="email" required>
+              <mat-error>Email is a required field</mat-error>
             </mat-form-field>
           </div>
           <div class="col-xs-6">
             <mat-form-field appearance="outline">
               <mat-label>Mobile</mat-label>
-              <input type="number" matInput [(ngModel)]="student.mobile" name="mobile">
+              <input type="number" matInput [(ngModel)]="student.mobile" name="mobile" required>
+              <mat-error>Mobile is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -60,11 +65,12 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Gender</mat-label>
-              <mat-select [(ngModel)]="student.genderId" name="gender">
+              <mat-select [(ngModel)]="student.genderId" name="gender" required>
                 <mat-option *ngFor="let gender of genderList" [value]="gender.id">
                   {{ gender.description }}
                 </mat-option>
               </mat-select>
+              <mat-error>Gender is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -72,7 +78,9 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Physical Address</mat-label>
-              <textarea matInput [(ngModel)]="student.address.physicalAddress" name="physicalAddress"></textarea>
+              <textarea matInput [(ngModel)]="student.address.physicalAddress" name="physicalAddress"
+                required></textarea>
+              <mat-error>Physical Address is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -80,7 +88,8 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Postal Address</mat-label>
-              <textarea matInput [(ngModel)]="student.address.postalAddress" name="postalAddress"></textarea>
+              <textarea matInput [(ngModel)]="student.address.postalAddress" name="postalAddress" required></textarea>
+              <mat-error>Postal Address is a required field</mat-error>
             </mat-form-field>
           </div>
         </div>
